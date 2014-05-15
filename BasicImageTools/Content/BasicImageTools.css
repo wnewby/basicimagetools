@@ -1,0 +1,219 @@
+﻿body {
+}
+
+/* main html containers */
+#gallery {
+    overflow: hidden;
+
+    list-style:none; 
+    position:relative;
+    left:50%;
+}
+
+#galleryContainer {
+    float:right;
+    position:relative;
+    left:-50%;
+    text-align:left;
+}
+
+/* ui controls */
+
+.ui-upload {
+    float: left;
+}
+
+.ui-upload-frame {
+    width: 100px;
+    height: 100px;
+}
+
+.ui-imageasset {
+    float:left;
+    border-radius: 15px;
+    height: 100px;
+    cursor: pointer;
+
+    float:left;
+    position:relative;
+}
+
+.ui-imageasset img {
+    border-radius: 15px;
+    height: 100px;
+
+    text-decoration:none;
+    float:left;
+    text-align:center;
+    white-space:nowrap;
+}
+
+.ui-workarea {
+    display:table;
+    height:100%;
+    width:100%;
+}
+
+.ui-workimage {
+    display:block;
+    margin:auto;
+    z-index:1;
+}
+
+/* tools */
+
+.ui-tool
+{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    /*
+    background-attachment:fixed;
+    background-position: center center;
+    */
+    background-position: center center;
+    background-repeat:no-repeat;
+    border:solid 5px black;
+    cursor: pointer;
+    float:left;
+}
+
+.ui-tool:hover
+{
+    border-color: #d1c211;
+    opacity: 1;
+}
+
+
+.ui-tool-disabled 
+{
+    opacity: .5;
+}
+
+.ui-tool-disabled:hover
+{
+    border-color: #000000;
+    opacity: .5;
+}
+
+.ui-tool-selected 
+{
+    border-color: #d1c211;
+    opacity: 1;
+}
+
+.ui-toolbutton 
+{
+    position: absolute;
+    cursor: pointer;
+    z-index:10;
+}
+
+/* TODO, use sprite*/
+.ui-tool-delete{
+    background-image:url('/images/delete.png');
+}
+
+.ui-tool-resize {
+    background-image:url('/images/resize.png');
+}
+
+.ui-tool-rotate {
+    background-image:url('/images/rotate.png');
+}
+
+.ui-tool-crop {
+    background-image:url('/images/crop.png');
+}
+
+
+.ui-tool-download {
+    background-image:url('/images/download.png');
+}
+
+.ui-tool-filter {
+    color: black;
+    font-weight: bold;
+    margin: 0 auto;
+    overflow: hidden;
+    width: auto;
+    height: 30px;
+    padding: 10px 2px 0px 2px;
+
+}
+
+.ui-tool-filter-sharpen:before
+{
+    content: "Sharpen"
+}
+
+.ui-tool-filter-emboss:before
+{
+    content: "Emboss"
+}
+
+.ui-tool-filter-blur:before
+{
+    content: "Blur"
+}
+
+.ui-tool-filter-detectedge:before
+{
+    content: "Detect Edge"
+}
+
+/* external jquery plugin overloads */
+
+.qtip {
+    max-width: 500px;
+}
+
+.qtip-toolbar{
+    padding: 0;
+}
+
+
+.ui-resizable-n, .ui-resizable-s, .ui-resizable-e, .ui-resizable-w, .ui-resizable-ne, .ui-resizable-nw, .ui-resizable-se, .ui-resizable-sw  {
+    background-color: #46B7F1;
+    opacity: .7;
+    border: dashed 2px black;
+
+}
+
+.ui-resizable-n, .ui-resizable-s{
+    height: 10px;
+    width: 100%;
+}
+
+.ui-resizable-w, .ui-resizable-e{
+    height: 100%;
+    width: 10px;
+}
+
+.ui-resizable-nw, .ui-resizable-sw, .ui-resizable-ne, .ui-resizable-se{
+    height: 18px;
+    width: 18px;
+    opacity: 1;
+    background-image: url(/Content/themes/base/images/ui-icons_cd0a0a_256x240.png);
+}
+
+
+
+.ui-resizable-nw {
+    background-position: -112px -16px;
+}
+
+.ui-resizable-ne {
+    background-position: -16px -16px;
+}
+
+.ui-resizable-sw {
+    background-position: -80px -16px;
+}
+
+.ui-resizable-se {
+    right: -5px;
+    bottom: -5px;
+    background-position: -48px -16px;
+}
+
