@@ -65,11 +65,5 @@ namespace BasicImageTools.Helpers
 
         }
 
-
-        public static string GetContentType(string fileExtension)
-        {
-            // WAAAAAAAA... NEED TO CHECK AGAINST KNOWN FILE LIST
-            return "image/jpeg";
-        }
     }
 }

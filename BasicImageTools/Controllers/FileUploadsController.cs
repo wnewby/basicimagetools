@@ -110,8 +110,8 @@ namespace BasicImageTools.Controllers
                 returnFile = ImageTools.ThumbnailImage(returnFile);
             }
 
-            // TODO get content type from file extention
-            return File(returnFile, General.GetContentType(""));
+            return File(returnFile, MimeMapping.GetMimeMapping(fileName));
+;
         }
         
         //
@@ -150,7 +150,7 @@ namespace BasicImageTools.Controllers
             byte[] returnFile = ImageTools.CropImage(fileData, x1, x2, y1, y2, scaleWidth, scaleHeight, rotation);
             
 
-            result = assman.SaveFile(returnFile, AssetManager.AssetType.User, General.GetContentType(""), fileName, recordId);
+            result = assman.SaveFile(returnFile, AssetManager.AssetType.User, MimeMapping.GetMimeMapping(fileName), fileName, recordId);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
@@ -171,7 +171,7 @@ namespace BasicImageTools.Controllers
 
             byte[] returnFile = ImageTools.RotateImage(fileData, rotation);
 
-            result = assman.SaveFile(returnFile, AssetManager.AssetType.User, General.GetContentType(""), fileName, recordId);
+            result = assman.SaveFile(returnFile, AssetManager.AssetType.User, MimeMapping.GetMimeMapping(fileName), fileName, recordId);
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
@@ -206,7 +206,7 @@ namespace BasicImageTools.Controllers
                         case "blur":  ImageTools.BlurImage(image as Bitmap, 1); break;
                         case "detectedge":  ImageTools.DetectEdge(image as Bitmap, 1); break;
                     }
-                    result = assman.SaveFile(image, AssetManager.AssetType.User, General.GetContentType(""), fileName, recordId);
+                    result = assman.SaveFile(image, AssetManager.AssetType.User, MimeMapping.GetMimeMapping(fileName), fileName, recordId);
                 }
             }
 
